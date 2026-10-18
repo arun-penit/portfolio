@@ -70,7 +70,7 @@ const jsonLd = {
   image: `${site.url}/arun.png`,
   address: { "@type": "PostalAddress", addressLocality: "Noida", addressCountry: "IN" },
   alumniOf: "Graphic Era Hill University",
-  worksFor: { "@type": "Organization", name: "PenIT Technology Pvt. Ltd." },
+  worksFor: { "@type": "Organization", name: " PenIT Technology Pvt. Ltd." },
   sameAs: [site.linkedin, site.github],
   knowsAbout: ["Artificial Intelligence", "Large Language Model", "RAG", "Voice AI", "FastAPI", "Full-Stack Development"],
 };
