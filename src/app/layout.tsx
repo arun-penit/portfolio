@@ -72,7 +72,7 @@ const jsonLd = {
   alumniOf: "Graphic Era Hill University",
   worksFor: { "@type": "Organization", name: "PenIT Technology Pvt. Ltd." },
   sameAs: [site.linkedin, site.github],
-  knowsAbout: ["Artificial Intelligence", "Large Language Models", "RAG", "Voice AI", "FastAPI", "Full-Stack Development"],
+  knowsAbout: ["Artificial Intelligence", "Large Language Model", "RAG", "Voice AI", "FastAPI", "Full-Stack Development"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
