@@ -14,16 +14,16 @@ export const site = {
 
 export const heroMetrics = [
   { value: 300, suffix: "+", label: "AI sales calls handled per day" },
-  { value: 47, suffix: "+", label: "Production API endpoints shipped" },
+  { value: 8, suffix: "+", label: "LLM tool integrations in a live agent" },
   { value: 25, suffix: "+", label: "RAG routing intents in production" },
-  { value: 1000, suffix: "+", label: "Products auto-ingested with vision AI" },
+  { value: 100, suffix: "+", label: "Monthly users on a shipped LMS" },
 ];
 
 export const about = {
   lead: "I build AI that does real work in production — not demos.",
   paragraphs: [
     "I'm an Applied AI & Backend Engineer at PenIT Technology, working where three disciplines meet: AI engineering, backend systems and full-stack product delivery. I build LLM-powered products, autonomous AI agents, multimodal AI workflows, RAG architectures and AI voice systems — plus the high-performance APIs, integrations and React or Vue frontends that turn them into products people actually use.",
-    "My work already runs in the real world: a voice agent handling 300+ sales calls a day, a RAG platform routing 25+ intents across multi-index vector search, a Whisper + GPT call-auditing microservice and a full LMS at PenIT — and, outside work, the 47+ endpoint multimodal backend of Ingrify, an open-source side project for Verinova Labs. I own the whole lifecycle: architecture, prompts, APIs, third-party integrations, Docker, CI/CD and production scaling.",
+    "My work already runs in the real world: a voice agent handling 300+ sales calls a day, a RAG platform routing 25+ intents across multi-index vector search, a Whisper + GPT call-auditing microservice and a full LMS at PenIT. I own the whole lifecycle: architecture, prompts, APIs, third-party integrations, Docker, CI/CD and production scaling.",
     "I'm drawn to hard problems in AI infrastructure, backend scalability, conversational AI and distributed systems. I'm looking for an international team building ambitious AI products — if you need an engineer who takes an idea from whiteboard to production and owns the outcome, let's talk.",
   ],
   pillars: [
@@ -57,7 +57,7 @@ export const about = {
       emphasis: "ownership",
       body: "Containerized, observable and automated — Docker, CI/CD, Nginx, Prometheus and Loki. I own it from architecture design to deployment and scaling.",
       tags: ["Docker", "GitHub Actions", "Nginx", "Prometheus", "Loki", "DigitalOcean"],
-      proof: { slug: "ingrify", text: "Ingrify — 47+ endpoints with CI/CD, metrics and logging" },
+      proof: { slug: "sales-call-analysis", text: "Call Analysis — Dockerized async microservice with webhook delivery" },
     },
   ],
 };
@@ -296,77 +296,8 @@ export const caseStudies: CaseStudy[] = [
     hue: 320,
   },
   {
-    slug: "ingrify",
-    index: "04",
-    title: "Ingrify — AI Food Intelligence",
-    kicker: "Multimodal AI · Backend platform",
-    period: "Dec 2025 – Apr 2026",
-    context: "Verinova Labs · Open-source side project",
-    role: "Backend lead — API design, AI pipelines, data, infra, CI/CD",
-    tagline: "Point your camera at a food label, get the truth about what you're eating.",
-    summary:
-      "The complete backend for an AI food-intelligence app: 47+ FastAPI endpoints on MongoDB with multimodal GPT-4o / GPT-5 pipelines for ingredient OCR, barcode extraction, allergen detection and NOVA classification — plus rewards, quizzes, leaderboards and a vision-powered catalog ingestion system.",
-    stack: ["FastAPI", "MongoDB", "OpenAI", "GPT-4o", "GPT-5", "Python", "Playwright", "aiohttp", "Firebase", "Twilio", "Brevo", "Nginx", "Prometheus", "Loki", "GitHub Actions", "Docker", "DigitalOcean"],
-    metrics: [
-      { value: "47+", label: "API endpoints" },
-      { value: "1,000+", label: "products auto-ingested" },
-      { value: "0", label: "manual data entry left" },
-    ],
-    problem:
-      "Food labels are dense, inconsistent and often misleading. Users want to know if something contains their allergens, how processed it is and whether it fits their diet — instantly, from a photo. The business also needed engagement loops and a large, accurate product catalog without an army of data-entry staff.",
-    approach: [
-      "I designed the backend as a modular FastAPI service on MongoDB with clear domains: auth, AI scanning, product catalog, rewards, quizzes, notifications and personalized dashboards — 47+ endpoints in total.",
-      "The scanning pipeline is multimodal: GPT-4o and GPT-5 read ingredient lists (OCR), extract barcodes, validate that multiple images belong to the same product, detect allergens, classify NOVA processing level and generate health insights personalized to the user's dietary profile.",
-      "For scale I leaned on MongoDB aggregation pipelines ($lookup, $facet, $sample), careful indexing and TTL-based namespace caching for hot queries. The catalog was bootstrapped by an ingestion tool combining Playwright and aiohttp scraping with OpenAI Vision validation and enrichment for 1,000+ products.",
-    ],
-    architecture: [
-      { title: "Clients", items: ["Mobile app", "Firebase push", "Twilio OTP", "Brevo email"] },
-      { title: "API · FastAPI", items: ["Auth & profiles", "AI scanning", "Catalog", "Rewards · quizzes", "Dashboards"] },
-      { title: "AI pipelines", items: ["Ingredient OCR", "Barcode extraction", "Multi-image validation", "Allergens · NOVA", "Health insights"] },
-      { title: "Data & ops", items: ["MongoDB + aggregations", "TTL caching", "Nginx · Docker", "Prometheus · Loki", "GitHub Actions"] },
-    ],
-    features: [
-      {
-        title: "Multimodal food scanning",
-        body: "From raw label photos to structured nutrition, ingredient, allergen and NOVA data with AI-generated, profile-aware health insights.",
-      },
-      {
-        title: "Engagement systems",
-        body: "OTP auth, referral rewards, wallet and point-ledger management, leaderboards, badge unlocking and personalized product recommendations driven by dietary profiles.",
-      },
-      {
-        title: "Performance engineering",
-        body: "Aggregation pipelines with $lookup, $facet and $sample, targeted indexes and TTL namespace caching keep high-traffic endpoints fast.",
-      },
-      {
-        title: "Automated catalog ingestion",
-        body: "Playwright + aiohttp scrape, OpenAI Vision validates and enriches — eliminating manual data entry across 1,000+ products.",
-      },
-    ],
-    decisions: [
-      {
-        title: "Point ledger, not a balance field",
-        body: "Wallets and rewards are managed through a point ledger so every reward, referral and redemption is traceable.",
-      },
-      {
-        title: "Observability from day one",
-        body: "Prometheus metrics and Loki logs behind Nginx made it possible to see latency and errors per endpoint in production.",
-      },
-      {
-        title: "Validate AI output against images",
-        body: "Multi-image product validation catches mismatched photos before bad data reaches the catalog.",
-      },
-    ],
-    outcomes: [
-      "Shipped a 47+ endpoint production backend deployed on DigitalOcean with CI/CD via GitHub Actions.",
-      "Multimodal GPT-4o / GPT-5 pipelines powering the app's core scanning experience.",
-      "1,000+ products ingested and enriched automatically — manual data entry eliminated.",
-    ],
-    hue: 65,
-  },
-  {
     slug: "coteca-lms",
-    index: "05",
+    index: "04",
     title: "Coteca LMS",
     kicker: "EdTech · Full-stack platform",
     period: "Apr 2025 – May 2025",
@@ -413,7 +344,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "edtech-platform",
-    index: "06",
+    index: "05",
     title: "StudyNotion — EdTech Marketplace",
     kicker: "MERN · College project",
     period: "Jan 2024",
